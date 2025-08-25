@@ -26,11 +26,13 @@ void free_matrix(int size, double** matrix) {
 }
 
 
+
 void add_matrices(int size, double** a, double** b, double** c) {
    #pragma omp parallel for collapse(2)
     for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            c[i][j] = a[i][j] + b[i][j];
+        for (int j = 0; j < i; j++) {
+            // c[i][j] = a[i][j] + b[i][j];
+            c[i][j]=c[i+1][j] + b[i][j];
         }
     }
 }

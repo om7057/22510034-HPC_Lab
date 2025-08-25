@@ -7,7 +7,7 @@ int main() {
     // taking user input for number of threads
     printf("Enter the number of threads to use: ");
     scanf("%d", &num_threads);
-
+    
     printf("\n--- Sequential Execution ---\n");
     // using single thread for loop based
     for (int i = 0; i < num_threads; i++) {
